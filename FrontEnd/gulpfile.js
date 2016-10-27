@@ -3,6 +3,7 @@ var gulp = require("gulp"),
       sass = require("gulp-sass"),
       autoprefixer = require('gulp-autoprefixer'),
       // Node modules
+	  
       del = require("del"),
       useref = require("gulp-useref"),
       uglify = require("gulp-uglify"),
@@ -20,6 +21,7 @@ gulp.task("server", function() {
 gulp.task("css", function() {
 
 	return gulp.src("src/sass/main.scss")
+		.pipe(sass())
 		.pipe(sass())
 		.pipe(autoprefixer({
 			browsers: ['last 7 versions', 'IE 9'],
